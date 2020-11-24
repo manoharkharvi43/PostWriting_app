@@ -3,9 +3,11 @@ import { NavLink, Route, Switch } from "react-router-dom";
 import New_Post from "./Components/New_Post";
 import ALl_Post from "../src/Components/All_Post";
 import { createContext, useState } from "react";
+import {ImCross} from 'react-icons/im'
 
 export  const search_word = createContext()
 function App() {
+
 
 
 
@@ -13,8 +15,9 @@ function App() {
 	return (
 		<>
 			<div className="home_container">
-				<div className="search">
-					<input type="text" placeholder="search" value={search} onChange={(e) => setsearch(e.target.value)}></input>
+				<div className="search_container">
+					<input type="text" placeholder="search" value={search} onChange={(e) => setsearch(e.target.value)} className="search" ></input>
+          {search ? <ImCross onClick={() => setsearch('')} />:null}
 				</div>
 				<div className="button-container">
 					<NavLink to="/createpost" activeClassName='is-active'>
