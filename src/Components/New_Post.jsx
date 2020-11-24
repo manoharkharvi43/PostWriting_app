@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./New_Post.css";
 import axios from "axios";
+import {Button} from '../stories/Button'
 
 function New_Post() {
 	const [data, setalldata] = useState({
@@ -57,9 +58,10 @@ function New_Post() {
 						onChange={postdatas}
 						name="content"
 					></textarea>
-					<button className="btn-submit" type="submit">
+					{/* <button className="btn-submit" type="submit">
 						Publish
-					</button>
+					</button> */}
+					<Button label='Publish' className= 'storybook-button--small'></Button>
 				</form>
 			</div>
 		</div>

@@ -2,7 +2,7 @@ import React from 'react'
 import {shallow} from 'enzyme'
 import Enzyme from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import New_Post from '../src/Components/New_Post'
+import New_Post from '../Components/New_Post'
 
 Enzyme.configure({ adapter: new Adapter() })
 
