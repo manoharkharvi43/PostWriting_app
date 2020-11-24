@@ -3,11 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Post_Card from './Components/PostCard';
+import New_Post from './Components/New_Post';
+import {BrowserRouter} from 'react-router-dom'
+
 
 ReactDOM.render(
-  <React.StrictMode>
+  <>
+
+    {/* <Post_Card/> */}
+    <BrowserRouter>
     <App />
-  </React.StrictMode>,
+    {/* <New_Post/> */}
+    </BrowserRouter>
+  </>,
   document.getElementById('root')
 );
 

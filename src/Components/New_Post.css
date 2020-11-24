@@ -1,0 +1,39 @@
+.new_post_container{
+   width: 50%;
+   height: 400px;
+   /* background-color: rgb(194, 189, 189); */
+   margin:20%
+}
+.input_title{
+     width: 100%;
+     height: 30px;
+     border-radius:7px;
+}
+.form{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+.input_content{
+    width: 100%;
+    height: 50px;
+    margin-top: 10%;
+}
+.btn-submit{
+    padding: 10px 15px;
+    background-image: linear-gradient(to right, rgb(190, 190, 190) , rgb(162, 177, 204));
+    width: 100%;
+    height: 40%;
+    margin-top: 10%;
+    border-radius: 10px;
+
+}
+
+@media only screen and (max-width:400px){
+    .new_post_container{
+        width: 100%;
+        height: 10%;
+        margin-bottom: 3%;
+    }
+}
