@@ -58,7 +58,7 @@ function New_Post() {
 						name="content"
 					></textarea>
 					<button className="btn-submit" type="submit">
-						Submit
+						Publish
 					</button>
 				</form>
 			</div>

@@ -1,9 +1,10 @@
 import "./App.css";
 import { NavLink, Route, Switch } from "react-router-dom";
 import New_Post from "./Components/New_Post";
-import ALl_Post from "../src/Components/All_Post";
+import All_Post from "../src/Components/All_Post";
 import { createContext, useState } from "react";
 import {ImCross} from 'react-icons/im'
+import {BsSearch} from 'react-icons/bs'
 
 export  const search_word = createContext()
 function App() {
@@ -16,18 +17,19 @@ function App() {
 		<>
 			<div className="home_container">
 				<div className="search_container">
+					<BsSearch />
 					<input type="text" placeholder="search" value={search} onChange={(e) => setsearch(e.target.value)} className="search" ></input>
           {search ? <ImCross onClick={() => setsearch('')} />:null}
 				</div>
 				<div className="button-container">
 					<NavLink to="/createpost" activeClassName='is-active'>
 						<button type="button" className="all_post_btn1" id="allpost_id">
-							Post
+							New Post
 						</button>
 					</NavLink>
 					<NavLink to="/allpost" activeClassName='is-active'>
 						<button type="button" className="all_post_btn1">
-							All post
+						Published
 						</button>
 					</NavLink>
 				</div>
@@ -40,7 +42,7 @@ function App() {
 						</Route>
 
 						<Route path="/allpost">
-							<ALl_Post />
+							<All_Post />
 						</Route>
 					</Switch>
           </search_word.Provider>

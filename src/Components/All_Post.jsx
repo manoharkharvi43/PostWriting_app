@@ -11,12 +11,11 @@ function All_Post() {
 	const getposts = async () => {
 		await axios
 			.get("http://localhost:4000/allposts")
-			.then((data) => (console.log(data.data), setallposts(data.data)))
+			.then((data) => setallposts(data.data))
 			.then((err) => console.log(err));
 	};
 	useEffect(() => {
 		getposts();
-		console.log(posts);
 	}, []);
 
 	return (
@@ -36,9 +35,7 @@ function All_Post() {
 										id={data._id}
 									/>
 								</>
-							) : (
-								<h1>no posts</h1>
-							)
+							) : null
 						)
 				: posts.map((data, index) => (
 						<>
