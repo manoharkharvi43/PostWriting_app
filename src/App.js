@@ -24,7 +24,7 @@ function App() {
 					{search ? <ImCross onClick={() => setsearch("")} /> : null}
 				</div>
 				<div className="button-container">
-					<NavLink to="/createpost" activeClassName="is-active">
+					<NavLink to="/" activeClassName="is-active">
 						<button type="button" className="all_post_btn1" id="allpost_id">
 							New Post
 						</button>
@@ -39,7 +39,7 @@ function App() {
 				<div className="container">
 					<search_word.Provider value={search}>
 						<Switch>
-							<Route path="/createpost">
+							<Route exact path="/">
 								<New_Post />
 							</Route>
 

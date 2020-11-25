@@ -49,7 +49,7 @@ function All_Post() {
 		getposts()
 	}, []);
 
-	const initialState = [];
+	// const initialState = [];
 	// const [state, dispatch] = useReducer(reducer, initialState);
 
 	return (
@@ -69,7 +69,7 @@ function All_Post() {
 										id={data._id}
 									/>
 								</>
-							) : null
+							) : <h4>No Posts</h4>
 						)
 				: posts.map((data, index) => (
 						<>

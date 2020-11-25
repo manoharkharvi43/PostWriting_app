@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import "./New_Post.css";
 import axios from "axios";
 import {Button} from '../stories/Button'
+import {FiLoader} from 'react-icons/fi'
 
 function New_Post() {
 	const [data, setalldata] = useState({
 		title: "",
 		content: "",
 	});
-	const [error, seterror] = useState("");
+	const [loading, setloading] = useState(false);
 	const postdatas = (e) => {
 		const { name, value } = e.target;
 
@@ -20,7 +21,7 @@ function New_Post() {
 
 	const postdata = (e) => {
 		e.preventDefault();
-
+		setloading(true);
 		fetch("http://localhost:4000/createpost", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
@@ -32,11 +33,15 @@ function New_Post() {
 		})
 			.then((res) => res.json())
 			.then((data) => {
-               console.log(data);
+				setloading(false);
+			   console.log(data)
+			  ;
 			})
 			.catch((err) => {
+				setloading(false);
 				console.log(err);
 			});
+
 	};
 
 	return (
@@ -61,7 +66,7 @@ function New_Post() {
 					{/* <button className="btn-submit" type="submit">
 						Publish
 					</button> */}
-					<Button label='Publish' className= 'storybook-button--small'></Button>
+					<Button label= { loading ? <FiLoader/> :'Publish'} className= 'storybook-button--small' type='submit'  ></Button>
 				</form>
 			</div>
 		</div>
